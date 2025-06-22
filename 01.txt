@@ -1,0 +1,13 @@
+Read about V8 engine
+Js behaviour in browser vs editor
+Dom doesnot work outside browser
+
+npm init
+Read about package.json
+scripts in package.json
+
+Modular Programming
+modules in NodeJs
+Built in modules
+
+FS Module

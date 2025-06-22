@@ -1,0 +1,79 @@
+==========================
+🚀 Node.js Architecture 🚀
+==========================
+
+Node.js uses a ★ Single-Threaded, Non-Blocking, Event-Driven ★ architecture.
+
+───────────────────────────
+🌟 Key Components of Node.js
+───────────────────────────
+
+1. 🖥️ V8 Engine (Google's Engine)
+   - Executes JavaScript code.
+   - Converts JS to machine code for high speed.
+
+2. 🧵 Single Thread
+   - Node.js operates on **one main thread**.
+   - Handles all incoming client requests.
+
+3. 🔄 Event Loop
+   - The core loop that keeps spinning continuously.
+   - Picks up tasks from the Event Queue.
+   - Manages async (non-blocking) operations efficiently.
+
+4. 📥 Event Queue
+   - Holds completed tasks waiting for the Event Loop.
+   - Tasks like HTTP responses, file reads, DB operations are queued here.
+
+5. 🛠️ Libuv
+   - A C++ library that handles:
+     → OS tasks
+     → File system access
+     → Networking
+     → Thread Pool management
+
+6. 🧰 Thread Pool
+   - Pool of worker threads.
+   - Handles heavy I/O operations like file access or database queries.
+   - Keeps the main thread free to handle new requests.
+
+─────────────────────────────
+⚙️ Flow of Node.js Execution
+─────────────────────────────
+
+Client Request 👉 Single Thread 👉
+✔️ Small Tasks (Immediate Execution)
+❌ Heavy Tasks (Delegated to Thread Pool)
+
+✅ Event Loop keeps spinning.
+✅ Completed tasks go to Event Queue.
+✅ Event Loop picks tasks from Event Queue and sends responses.
+
+─────────────────────
+📜 Node.js is:
+─────────────────────
+✔️ Single-threaded but non-blocking.
+✔️ Event-driven and asynchronous.
+✔️ Powered by V8 Engine.
+✔️ Efficient for I/O intensive apps (like chat, streaming).
+
+─────────────────────
+📌 Quick Summary:
+─────────────────────
+- Single Thread (Main Controller)
+- Event Loop (Task Manager)
+- Event Queue (Task Waiting Area)
+- Libuv (Background Manager)
+- Thread Pool (Hard Worker Team)
+- V8 Engine (Speed Booster)
+
+───────────────────────────────
+💡 Perfect For:
+───────────────────────────────
+✔️ Real-time applications
+✔️ Streaming services
+✔️ Chat servers
+✔️ APIs with high concurrency
+
+───────────────────────────────
+

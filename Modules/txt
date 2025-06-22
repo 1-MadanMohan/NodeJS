@@ -1,0 +1,11 @@
+
+Step	What to Do	Why
+1	Define all your functions first --->	Clean and organized
+2	At the end, use module.exports = { ... }  --->	So you export one single object
+3	Never assign module.exports multiple times --->	Each assignment overwrites the previous one
+4	Optional: You can alias names if needed	Like { M: multiply } if you want short keys
+
+
+
+Use moduele.exports one time, becoz it overwrites the previous one
+But you can use exports.function() multiple times
