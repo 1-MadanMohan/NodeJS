@@ -1,0 +1,56 @@
+🌐 URL in Node.js - Plain Text Notes
+
+📌 What is URL?
+A URL (Uniform Resource Locator) is the web address used to locate resources on the internet.
+
+🛣️ Example of a URL:
+https://example.com:8080/path/name?query=value#section
+
+🧩 URL Structure:
+------------------------------------------------------
+🔹 Protocol   : https:
+    - Type of connection (http, https, ftp)
+🔹 Hostname   : example.com
+    - Server address (domain)
+🔹 Port       : 8080
+    - Optional port number for the server
+🔹 Pathname   : /path/name
+    - Resource or file location on the server
+🔹 Query      : ?query=value
+    - Optional parameters (key=value pairs)
+🔹 Fragment   : #section
+    - Points to a specific part of the page
+------------------------------------------------------
+
+📚 Node.js URL Module:
+Node.js has a built-in 'url' module to work with URLs.
+
+✅ Load the module:
+const url = require('url');
+
+✅ Parse a URL:
+let myURL = url.parse('https://example.com:8080/path/name?query=value#section', true);
+
+✅ Example - Parsed Parts:
+myURL.protocol  --> 'https:'
+myURL.host      --> 'example.com:8080'
+myURL.hostname  --> 'example.com'
+myURL.port      --> '8080'
+myURL.pathname  --> '/path/name'
+myURL.query     --> { query: 'value' }
+myURL.hash      --> '#section'
+
+⚡ Modern Method (Recommended):
+const myURL = new URL('https://example.com:8080/path/name?query=value#section');
+
+myURL.protocol  --> 'https:'
+myURL.hostname  --> 'example.com'
+myURL.port      --> '8080'
+myURL.pathname  --> '/path/name'
+myURL.searchParams.get('query') --> 'value'
+myURL.hash      --> '#section'
+
+💡 Tip:
+- Prefer using the 'URL' class (WHATWG standard) in modern Node.js.
+- The 'url.parse' method is legacy but still works.
+

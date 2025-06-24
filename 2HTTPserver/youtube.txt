@@ -1,0 +1,51 @@
+🌐 Node.js HTTP Server - Plain Text Notes
+
+📌 Overview:  
+This Node.js program creates a simple HTTP server that can handle different types of 
+web requests, similar to how YouTube handles its URLs. It logs requests and responds based on URL paths.
+
+🛠️ Required Node.js Modules:  
+- http ➜ For creating the server  
+- fs ➜ For writing logs to a file  
+- url ➜ For parsing incoming URLs  
+
+🔌 Server Setup:  
+- The server listens on port 3000.  
+- Ignores requests for the favicon (small browser tab icon 🖼️).  
+- Logs each request with the current date, time, and requested URL in log.txt.  
+
+🔗 URL Parsing:  
+- Uses url.parse() to split the URL into path and query parameters.  
+
+🧩 Example:  
+Request URL: /watch?v=123  
+- Path ➜ /watch  
+- Query ➜ v = 123  
+
+📂 Routing (Using Switch Cases):  
+- /results 🔍 ➜ Search Page  
+    ➜ If search term is provided, respond with the search term.  
+    ➜ If no search term, respond with "No search made."  
+
+- /watch 🎬 ➜ Video Page  
+    ➜ If video ID is provided, respond with the video ID.  
+    ➜ If no video ID, respond with "No video selected."  
+
+- /feed/you 🗞️ ➜ Personalized Feed Page  
+    ➜ Respond with a welcome message.  
+
+- /playlist 🎵 ➜ Playlist Page  
+    ➜ If playlist ID is provided, display the playlist ID.  
+    ➜ If no playlist ID, respond with "No playlist selected."  
+
+- Unknown Path 🚫 ➜ 404 Error  
+    ➜ Respond with "404 Page Not Found."  
+
+✅ Server Listening:  
+The server starts listening on port 3000 and shows a confirmation message in the console.  
+
+💡 Key Learnings:  
+- URL handling  
+- Query parameter extraction  
+- Request logging  
+- Basic routing in Node.js without external frameworks  
