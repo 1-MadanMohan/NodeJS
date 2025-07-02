@@ -1,0 +1,58 @@
+# 📁 Project Setup
+
+1. **Create** a new folder:
+   ```bash
+   mkdir project1 && cd project1
+   ```
+
+2. **Initialize** the project:
+   ```bash
+   npm init -y
+   ```
+
+3. **Install Express**:
+   ```bash
+   npm install express
+   ```
+
+---
+
+# 🧩 Task: Designing a REST API
+
+Build a simple **RESTful API** using **Express.js** that serves and manipulates user data in **JSON** format.
+
+---
+
+# 📌 API Endpoints
+
+> ✅ All endpoints are **prefixed with `/api`** for clarity and convention.
+
+| 🛠️ **Method** | 🔗 **Endpoint**        | 📄 **Description**                    |
+|---------------|------------------------|----------------------------------------|
+| `GET`         | `/api/users`           | Retrieve a list of all users           |
+| `GET`         | `/api/users/:id`       | Get a single user by ID                |
+| `POST`        | `/api/users`           | Create a new user                      |
+| `PATCH`       | `/api/users/:id`       | Update an existing user by ID          |
+| `DELETE`      | `/api/users/:id`       | Delete a user by ID                    |
+
+---
+
+# ✅ Why Use `/api` in Routes?
+
+- Clearly separates **HTML-rendering routes** (`/home`, `/about`) from **data APIs** (`/api/users`)
+- Makes route structure **cleaner** and **more scalable**
+- Enables **versioning** (e.g., `/api/v1/users`)
+- Follows **industry best practices**
+
+---
+
+# 🧪 Generate Fake User Data
+
+Use [**Mockaroo**](https://www.mockaroo.com/) to generate realistic test users:
+
+1. Select fields like `id`, `name`, `email`, `phone`, etc.
+2. Export as JSON and save to `users.json` for use in your API.
+
+
+Note: When testing an API locally, you need to use the Postman Desktop Agent. 
+You currently have a different Agent selected, which can’t send requests to the Localhost. | 
