@@ -2,9 +2,14 @@
 const express = require("express");
 const app = express();
 const PORT = 8000;
+const fs = require("fs");
+
 
 // 📁 Load user/movie data from JSON
 const users = require("./MOCK_DATA.json");
+
+// 🛠️ Middleware plugin
+app.use(express.urlencoded({ extended: false })); // ✅ Parse URL-encoded bodies
 
 // 🌍 Route 1: Serve an HTML page with the movie list
 app.get("/users", (req, res) => {
@@ -34,6 +39,17 @@ app.get("/api/users/:id", (req, res) => {
   } else {
     res.status(404).json({ message: "❌ User not found" }); // ❌ Not found
   }
+});
+
+const path = require("path");
+
+app.post("/api/users", (req, res) => {
+  const body = req.body;
+  users.push({ ...body, id: users.length + 1 });
+
+  fs.writeFile(path.join(__dirname, "MOCK_DATA.json"), JSON.stringify(users), (err, data) => {
+    return res.json({ status: "✅ User added successfully" });
+  });
 });
 
 // 🚦 Start the server

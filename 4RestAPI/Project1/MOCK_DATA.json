@@ -1,352 +1,367 @@
 [
-  {
-    "id": 1,
-    "Movie": "Martian",
-    "Watched Year": 2022,
-    "Released Year": 2015,
-    "Lead Actor": "Matt Damon"
-  },
-  {
-    "id": 2,
-    "Movie": "Interstellar",
-    "Watched Year": 2022,
-    "Released Year": 2014,
-    "Lead Actor": "Matthew McConaughey"
-  },
-  {
-    "id": 3,
-    "Movie": "The Adam Project",
-    "Watched Year": 2023,
-    "Released Year": 2022,
-    "Lead Actor": "Ryan Reynolds"
-  },
-  {
-    "id": 4,
-    "Movie": "Space Sweepers",
-    "Watched Year": 2023,
-    "Released Year": 2021,
-    "Lead Actor": "Song Joong-ki"
-  },
-  {
-    "id": 5,
-    "Movie": "Tenet",
-    "Watched Year": 2022,
-    "Released Year": 2020,
-    "Lead Actor": "John David Washington"
-  },
-  {
-    "id": 6,
-    "Movie": "Inception",
-    "Watched Year": 2023,
-    "Released Year": 2010,
-    "Lead Actor": "Leonardo DiCaprio"
-  },
-  {
-    "id": 7,
-    "Movie": "Knowing",
-    "Watched Year": 2023,
-    "Released Year": 2009,
-    "Lead Actor": "Nicolas Cage"
-  },
-  {
-    "id": 8,
-    "Movie": "Avatar",
-    "Watched Year": 2022,
-    "Released Year": 2009,
-    "Lead Actor": "Sam Worthington"
-  },
-  {
-    "id": 9,
-    "Movie": "Free Guy",
-    "Watched Year": 2022,
-    "Released Year": 2021,
-    "Lead Actor": "Ryan Reynolds"
-  },
-  {
-    "id": 10,
-    "Movie": "Thor 1",
-    "Watched Year": 2022,
-    "Released Year": 2011,
-    "Lead Actor": "Chris Hemsworth"
-  },
-  {
-    "id": 11,
-    "Movie": "Iron Man 1",
-    "Watched Year": 2022,
-    "Released Year": 2008,
-    "Lead Actor": "Robert Downey Jr."
-  },
-  {
-    "id": 12,
-    "Movie": "Iron Man 2",
-    "Watched Year": 2022,
-    "Released Year": 2010,
-    "Lead Actor": "Robert Downey Jr."
-  },
-  {
-    "id": 13,
-    "Movie": "Iron Man 3",
-    "Watched Year": 2022,
-    "Released Year": 2013,
-    "Lead Actor": "Robert Downey Jr."
-  },
-  {
-    "id": 14,
-    "Movie": "Captain America 1",
-    "Watched Year": 2022,
-    "Released Year": 2011,
-    "Lead Actor": "Chris Evans"
-  },
-  {
-    "id": 15,
-    "Movie": "Winter Soldier",
-    "Watched Year": 2022,
-    "Released Year": 2014,
-    "Lead Actor": "Chris Evans"
-  },
-  {
-    "id": 16,
-    "Movie": "Thor 2",
-    "Watched Year": 2022,
-    "Released Year": 2013,
-    "Lead Actor": "Chris Hemsworth"
-  },
-  {
-    "id": 17,
-    "Movie": "The Avengers",
-    "Watched Year": 2022,
-    "Released Year": 2012,
-    "Lead Actor": "Robert Downey Jr."
-  },
-  {
-    "id": 18,
-    "Movie": "Age of Ultron",
-    "Watched Year": 2022,
-    "Released Year": 2015,
-    "Lead Actor": "Robert Downey Jr."
-  },
-  {
-    "id": 19,
-    "Movie": "Ant Man",
-    "Watched Year": 2022,
-    "Released Year": 2015,
-    "Lead Actor": "Paul Rudd"
-  },
-  {
-    "id": 20,
-    "Movie": "Doctor Strange",
-    "Watched Year": 2022,
-    "Released Year": 2016,
-    "Lead Actor": "Benedict Cumberbatch"
-  },
-  {
-    "id": 21,
-    "Movie": "Civil War",
-    "Watched Year": 2022,
-    "Released Year": 2016,
-    "Lead Actor": "Robert Downey Jr."
-  },
-  {
-    "id": 22,
-    "Movie": "Homecoming",
-    "Watched Year": 2022,
-    "Released Year": 2017,
-    "Lead Actor": "Tom Holland"
-  },
-  {
-    "id": 23,
-    "Movie": "Thor-Ragnorok",
-    "Watched Year": 2023,
-    "Released Year": 2017,
-    "Lead Actor": "Chris Hemsworth"
-  },
-  {
-    "id": 24,
-    "Movie": "Infinity War",
-    "Watched Year": 2022,
-    "Released Year": 2018,
-    "Lead Actor": "Robert Downey Jr."
-  },
-  {
-    "id": 25,
-    "Movie": "End Game",
-    "Watched Year": 2023,
-    "Released Year": 2019,
-    "Lead Actor": "Robert Downey Jr."
-  },
-  {
-    "id": 26,
-    "Movie": "No Way to Home",
-    "Watched Year": 2022,
-    "Released Year": 2021,
-    "Lead Actor": "Tom Holland"
-  },
-  {
-    "id": 27,
-    "Movie": "Multiverse of Madness",
-    "Watched Year": 2023,
-    "Released Year": 2022,
-    "Lead Actor": "Benedict Cumberbatch"
-  },
-  {
-    "id": 28,
-    "Movie": "Spider man 1",
-    "Watched Year": 2022,
-    "Released Year": 2002,
-    "Lead Actor": "Tobey Maguire"
-  },
-  {
-    "id": 29,
-    "Movie": "Spider man 2",
-    "Watched Year": 2022,
-    "Released Year": 2004,
-    "Lead Actor": "Tobey Maguire"
-  },
-  {
-    "id": 30,
-    "Movie": "Spider man 3",
-    "Watched Year": 2022,
-    "Released Year": 2007,
-    "Lead Actor": "Tobey Maguire"
-  },
-  {
-    "id": 31,
-    "Movie": "The amazing spiderman 1",
-    "Watched Year": 2023,
-    "Released Year": 2012,
-    "Lead Actor": "Andrew Garfield"
-  },
-  {
-    "id": 32,
-    "Movie": "The amazing spiderman 2",
-    "Watched Year": 2022,
-    "Released Year": 2014,
-    "Lead Actor": "Andrew Garfield"
-  },
-  {
-    "id": 33,
-    "Movie": "The Matrix",
-    "Watched Year": 2023,
-    "Released Year": 1999,
-    "Lead Actor": "Keanu Reeves"
-  },
-  {
-    "id": 34,
-    "Movie": "The Matrix Reloaded",
-    "Watched Year": 2023,
-    "Released Year": 2003,
-    "Lead Actor": "Keanu Reeves"
-  },
-  {
-    "id": 35,
-    "Movie": "Fight Club",
-    "Watched Year": 2023,
-    "Released Year": 1999,
-    "Lead Actor": "Brad Pitt"
-  },
-  {
-    "id": 36,
-    "Movie": "Mission Impossible - Fallout",
-    "Watched Year": 2023,
-    "Released Year": 2018,
-    "Lead Actor": "Tom Cruise"
-  },
-  {
-    "id": 37,
-    "Movie": "300-1",
-    "Watched Year": 2019,
-    "Released Year": 2006,
-    "Lead Actor": "Gerard Butler"
-  },
-  {
-    "id": 38,
-    "Movie": "300-2",
-    "Watched Year": 2019,
-    "Released Year": 2014,
-    "Lead Actor": "Sullivan Stapleton"
-  },
-  {
-    "id": 39,
-    "Movie": "Shutter Island",
-    "Watched Year": 2023,
-    "Released Year": 2010,
-    "Lead Actor": "Leonardo DiCaprio"
-  },
-  {
-    "id": 40,
-    "Movie": "Ant Man and the Wasp",
-    "Watched Year": 2023,
-    "Released Year": 2018,
-    "Lead Actor": "Paul Rudd"
-  },
-  {
-    "id": 41,
-    "Movie": "Spider man - Far from Home",
-    "Watched Year": 2023,
-    "Released Year": 2019,
-    "Lead Actor": "Tom Holland"
-  },
-  {
-    "id": 42,
-    "Movie": "The Shawshank Redemption",
-    "Watched Year": 2024,
-    "Released Year": 1994,
-    "Lead Actor": "Tim Robbins"
-  },
-  {
-    "id": 43,
-    "Movie": "World War Z",
-    "Watched Year": 2023,
-    "Released Year": 2013,
-    "Lead Actor": "Brad Pitt"
-  },
-  {
-    "id": 44,
-    "Movie": "Source Code",
-    "Watched Year": 2023,
-    "Released Year": 2011,
-    "Lead Actor": "Jake Gyllenhaal"
-  },
-  {
-    "id": 45,
-    "Movie": "Soldier Boy",
-    "Watched Year": 2023,
-    "Released Year": 2023,
-    "Lead Actor": "Jensen Ackles"
-  },
-  {
-    "id": 46,
-    "Movie": "Bumblebee",
-    "Watched Year": 2023,
-    "Released Year": 2018,
-    "Lead Actor": "Hailee Steinfeld"
-  },
-  {
-    "id": 47,
-    "Movie": "Ready Player One",
-    "Watched Year": 2023,
-    "Released Year": 2018,
-    "Lead Actor": "Tye Sheridan"
-  },
-  {
-    "id": 48,
-    "Movie": "John Wick",
-    "Watched Year": 2023,
-    "Released Year": 2014,
-    "Lead Actor": "Keanu Reeves"
-  },
-  {
-    "id": 49,
-    "Movie": "In Time",
-    "Watched Year": 2023,
-    "Released Year": 2011,
-    "Lead Actor": "Justin Timberlake"
-  },
-  {
-    "id": 50,
-    "Movie": "John Wick 2",
-    "Watched Year": 2023,
-    "Released Year": 2017,
-    "Lead Actor": "Keanu Reeves"
-  }
-] 
+    {
+        "id": 1,
+        "Movie": "Martian",
+        "Watched Year": 2022,
+        "Released Year": 2015,
+        "Lead Actor": "Matt Damon"
+    },
+    {
+        "id": 2,
+        "Movie": "Interstellar",
+        "Watched Year": 2022,
+        "Released Year": 2014,
+        "Lead Actor": "Matthew McConaughey"
+    },
+    {
+        "id": 3,
+        "Movie": "The Adam Project",
+        "Watched Year": 2023,
+        "Released Year": 2022,
+        "Lead Actor": "Ryan Reynolds"
+    },
+    {
+        "id": 4,
+        "Movie": "Space Sweepers",
+        "Watched Year": 2023,
+        "Released Year": 2021,
+        "Lead Actor": "Song Joong-ki"
+    },
+    {
+        "id": 5,
+        "Movie": "Tenet",
+        "Watched Year": 2022,
+        "Released Year": 2020,
+        "Lead Actor": "John David Washington"
+    },
+    {
+        "id": 6,
+        "Movie": "Inception",
+        "Watched Year": 2023,
+        "Released Year": 2010,
+        "Lead Actor": "Leonardo DiCaprio"
+    },
+    {
+        "id": 7,
+        "Movie": "Knowing",
+        "Watched Year": 2023,
+        "Released Year": 2009,
+        "Lead Actor": "Nicolas Cage"
+    },
+    {
+        "id": 8,
+        "Movie": "Avatar",
+        "Watched Year": 2022,
+        "Released Year": 2009,
+        "Lead Actor": "Sam Worthington"
+    },
+    {
+        "id": 9,
+        "Movie": "Free Guy",
+        "Watched Year": 2022,
+        "Released Year": 2021,
+        "Lead Actor": "Ryan Reynolds"
+    },
+    {
+        "id": 10,
+        "Movie": "Thor 1",
+        "Watched Year": 2022,
+        "Released Year": 2011,
+        "Lead Actor": "Chris Hemsworth"
+    },
+    {
+        "id": 11,
+        "Movie": "Iron Man 1",
+        "Watched Year": 2022,
+        "Released Year": 2008,
+        "Lead Actor": "Robert Downey Jr."
+    },
+    {
+        "id": 12,
+        "Movie": "Iron Man 2",
+        "Watched Year": 2022,
+        "Released Year": 2010,
+        "Lead Actor": "Robert Downey Jr."
+    },
+    {
+        "id": 13,
+        "Movie": "Iron Man 3",
+        "Watched Year": 2022,
+        "Released Year": 2013,
+        "Lead Actor": "Robert Downey Jr."
+    },
+    {
+        "id": 14,
+        "Movie": "Captain America 1",
+        "Watched Year": 2022,
+        "Released Year": 2011,
+        "Lead Actor": "Chris Evans"
+    },
+    {
+        "id": 15,
+        "Movie": "Winter Soldier",
+        "Watched Year": 2022,
+        "Released Year": 2014,
+        "Lead Actor": "Chris Evans"
+    },
+    {
+        "id": 16,
+        "Movie": "Thor 2",
+        "Watched Year": 2022,
+        "Released Year": 2013,
+        "Lead Actor": "Chris Hemsworth"
+    },
+    {
+        "id": 17,
+        "Movie": "The Avengers",
+        "Watched Year": 2022,
+        "Released Year": 2012,
+        "Lead Actor": "Robert Downey Jr."
+    },
+    {
+        "id": 18,
+        "Movie": "Age of Ultron",
+        "Watched Year": 2022,
+        "Released Year": 2015,
+        "Lead Actor": "Robert Downey Jr."
+    },
+    {
+        "id": 19,
+        "Movie": "Ant Man",
+        "Watched Year": 2022,
+        "Released Year": 2015,
+        "Lead Actor": "Paul Rudd"
+    },
+    {
+        "id": 20,
+        "Movie": "Doctor Strange",
+        "Watched Year": 2022,
+        "Released Year": 2016,
+        "Lead Actor": "Benedict Cumberbatch"
+    },
+    {
+        "id": 21,
+        "Movie": "Civil War",
+        "Watched Year": 2022,
+        "Released Year": 2016,
+        "Lead Actor": "Robert Downey Jr."
+    },
+    {
+        "id": 22,
+        "Movie": "Homecoming",
+        "Watched Year": 2022,
+        "Released Year": 2017,
+        "Lead Actor": "Tom Holland"
+    },
+    {
+        "id": 23,
+        "Movie": "Thor-Ragnorok",
+        "Watched Year": 2023,
+        "Released Year": 2017,
+        "Lead Actor": "Chris Hemsworth"
+    },
+    {
+        "id": 24,
+        "Movie": "Infinity War",
+        "Watched Year": 2022,
+        "Released Year": 2018,
+        "Lead Actor": "Robert Downey Jr."
+    },
+    {
+        "id": 25,
+        "Movie": "End Game",
+        "Watched Year": 2023,
+        "Released Year": 2019,
+        "Lead Actor": "Robert Downey Jr."
+    },
+    {
+        "id": 26,
+        "Movie": "No Way to Home",
+        "Watched Year": 2022,
+        "Released Year": 2021,
+        "Lead Actor": "Tom Holland"
+    },
+    {
+        "id": 27,
+        "Movie": "Multiverse of Madness",
+        "Watched Year": 2023,
+        "Released Year": 2022,
+        "Lead Actor": "Benedict Cumberbatch"
+    },
+    {
+        "id": 28,
+        "Movie": "Spider man 1",
+        "Watched Year": 2022,
+        "Released Year": 2002,
+        "Lead Actor": "Tobey Maguire"
+    },
+    {
+        "id": 29,
+        "Movie": "Spider man 2",
+        "Watched Year": 2022,
+        "Released Year": 2004,
+        "Lead Actor": "Tobey Maguire"
+    },
+    {
+        "id": 30,
+        "Movie": "Spider man 3",
+        "Watched Year": 2022,
+        "Released Year": 2007,
+        "Lead Actor": "Tobey Maguire"
+    },
+    {
+        "id": 31,
+        "Movie": "The amazing spiderman 1",
+        "Watched Year": 2023,
+        "Released Year": 2012,
+        "Lead Actor": "Andrew Garfield"
+    },
+    {
+        "id": 32,
+        "Movie": "The amazing spiderman 2",
+        "Watched Year": 2022,
+        "Released Year": 2014,
+        "Lead Actor": "Andrew Garfield"
+    },
+    {
+        "id": 33,
+        "Movie": "The Matrix",
+        "Watched Year": 2023,
+        "Released Year": 1999,
+        "Lead Actor": "Keanu Reeves"
+    },
+    {
+        "id": 34,
+        "Movie": "The Matrix Reloaded",
+        "Watched Year": 2023,
+        "Released Year": 2003,
+        "Lead Actor": "Keanu Reeves"
+    },
+    {
+        "id": 35,
+        "Movie": "Fight Club",
+        "Watched Year": 2023,
+        "Released Year": 1999,
+        "Lead Actor": "Brad Pitt"
+    },
+    {
+        "id": 36,
+        "Movie": "Mission Impossible - Fallout",
+        "Watched Year": 2023,
+        "Released Year": 2018,
+        "Lead Actor": "Tom Cruise"
+    },
+    {
+        "id": 37,
+        "Movie": "300-1",
+        "Watched Year": 2019,
+        "Released Year": 2006,
+        "Lead Actor": "Gerard Butler"
+    },
+    {
+        "id": 38,
+        "Movie": "300-2",
+        "Watched Year": 2019,
+        "Released Year": 2014,
+        "Lead Actor": "Sullivan Stapleton"
+    },
+    {
+        "id": 39,
+        "Movie": "Shutter Island",
+        "Watched Year": 2023,
+        "Released Year": 2010,
+        "Lead Actor": "Leonardo DiCaprio"
+    },
+    {
+        "id": 40,
+        "Movie": "Ant Man and the Wasp",
+        "Watched Year": 2023,
+        "Released Year": 2018,
+        "Lead Actor": "Paul Rudd"
+    },
+    {
+        "id": 41,
+        "Movie": "Spider man - Far from Home",
+        "Watched Year": 2023,
+        "Released Year": 2019,
+        "Lead Actor": "Tom Holland"
+    },
+    {
+        "id": 42,
+        "Movie": "The Shawshank Redemption",
+        "Watched Year": 2024,
+        "Released Year": 1994,
+        "Lead Actor": "Tim Robbins"
+    },
+    {
+        "id": 43,
+        "Movie": "World War Z",
+        "Watched Year": 2023,
+        "Released Year": 2013,
+        "Lead Actor": "Brad Pitt"
+    },
+    {
+        "id": 44,
+        "Movie": "Source Code",
+        "Watched Year": 2023,
+        "Released Year": 2011,
+        "Lead Actor": "Jake Gyllenhaal"
+    },
+    {
+        "id": 45,
+        "Movie": "Soldier Boy",
+        "Watched Year": 2023,
+        "Released Year": 2023,
+        "Lead Actor": "Jensen Ackles"
+    },
+    {
+        "id": 46,
+        "Movie": "Bumblebee",
+        "Watched Year": 2023,
+        "Released Year": 2018,
+        "Lead Actor": "Hailee Steinfeld"
+    },
+    {
+        "id": 47,
+        "Movie": "Ready Player One",
+        "Watched Year": 2023,
+        "Released Year": 2018,
+        "Lead Actor": "Tye Sheridan"
+    },
+    {
+        "id": 48,
+        "Movie": "John Wick",
+        "Watched Year": 2023,
+        "Released Year": 2014,
+        "Lead Actor": "Keanu Reeves"
+    },
+    {
+        "id": 49,
+        "Movie": "In Time",
+        "Watched Year": 2023,
+        "Released Year": 2011,
+        "Lead Actor": "Justin Timberlake"
+    },
+    {
+        "id": 50,
+        "Movie": "John Wick 2",
+        "Watched Year": 2023,
+        "Released Year": 2017,
+        "Lead Actor": "Keanu Reeves"
+    },
+    {
+        "Movie": "Bahubali",
+        "Watched Year": "2015",
+        "Released Year": "2015",
+        "Lead Actor": "Prabhas, Rana",
+        "id": 51
+    },
+    {
+        "Movie": "Bahubali 2",
+        "Watched Year": "2017",
+        "Released Year": "2017",
+        "Lead Actor": "Prabhas, Rana",
+        "id": 52
+    }
+  
+]
