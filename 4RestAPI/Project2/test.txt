@@ -1,0 +1,4 @@
+Schema(defined structure)
+Schema - model
+using that model we do crud ops
+

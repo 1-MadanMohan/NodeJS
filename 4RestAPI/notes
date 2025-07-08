@@ -371,3 +371,26 @@ caching behavior, cookies, and even access control.
 
 They are ESSENTIAL in API communication, security, and performance optimization.
 */
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HTTP STATUS CODES - THE SIGNALS OF THE WEB 🌐
+
+1xx – Informational
+  100 Continue – Request received, continue sending.
+
+2xx – Success
+  200 OK – Request successful.
+  201 Created – Resource created.
+
+3xx – Redirection
+  301 Moved Permanently – URL has changed permanently.
+  302 Found – Temporarily moved.
+
+4xx – Client Error
+  400 Bad Request – Invalid request.
+  401 Unauthorized – Login required.
+  403 Forbidden – Access denied.
+  404 Not Found – Resource not found.
+
+5xx – Server Error
+  500 Internal Server Error – Server crashed.
+  503 Service Unavailable – Server is down or busy.
