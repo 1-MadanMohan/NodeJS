@@ -1,0 +1,40 @@
+😄 Glad it worked! Here's what we did — plain and simple:
+
+---
+
+### 🔧 **Problem**
+
+Git was trying to **digitally sign your commits** using GPG — but you **didn't have a private key**, so it failed every time.
+
+---
+
+### ✅ **What We Did**
+
+We told Git:
+
+> **“Stop signing commits — I just want to commit and push!”**
+
+By running this command:
+
+```bash
+git config --global commit.gpgSign false
+```
+
+That disabled GPG signing globally on your system — no more errors, no more headaches.
+
+---
+
+### 🎉 Result
+
+Now Git:
+
+* ✅ Commits your changes normally
+* ✅ Pushes them to GitHub
+* ❌ Doesn’t try to sign with GPG anymore
+
+---
+
+If you ever want to re-enable signing or learn how to use GPG properly (with the green ✅ Verified badge on GitHub), just let me know.
+Otherwise, you’re good to **focus on building and shipping code**. 🚀
+
+Let me know if you want help cleaning up, pushing, or organizing your repo next.
