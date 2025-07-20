@@ -1,0 +1,166 @@
+npm i ejs in cli
+
+
+## ❌ Error: Failed to lookup view "home" in views directory
+
+### 🧠 Root Cause:
+When you write:
+```js
+app.set('views', path.resolve("./views"));
+```
+
+This line resolves the `views` folder **relative to your current terminal working directory**, not the location of your `index.js` file.
+
+---
+
+### 💥 What Happened:
+
+1. You ran this from:
+   ```powershell
+   PS C:\Users\madan\STACK\NodeJs>
+   node "c:\Users\madan\STACK\NodeJs\5URLshort\index.js"
+   ```
+
+2. So, `path.resolve("./views")` became:
+   ```
+   C:\Users\madan\STACK\NodeJs\views
+   ```
+   ❌ This is wrong, because your actual views folder is:
+   ```
+   C:\Users\madan\STACK\NodeJs\5URLshort\views
+   ```
+
+---
+
+### ✅ When It Worked:
+
+You later ran:
+```powershell
+PS C:\Users\madan\STACK\NodeJs\5urlshort>
+node index.js
+```
+
+So `path.resolve("./views")` correctly became:
+```
+C:\Users\madan\STACK\NodeJs\5URLshort\views
+```
+
+✅ This worked because your terminal path matched your `index.js` location.
+
+---
+
+### 🛠️ Permanent Fix (Safe Everywhere):
+
+Use this line instead:
+```js
+app.set('views', path.join(__dirname, 'views'));
+```
+
+✅ This always resolves the `views` folder **relative to the file location**, regardless of where you run `node` from.
+
+---
+
+### 📌 Summary:
+
+| What You Used | Behavior |
+|---------------|----------|
+| `path.resolve("./views")` | Depends on terminal path (fragile ❌) |
+| `path.join(__dirname, "views")` | Always correct based on file location (safe ✅) |
+
+
+
+
+
+
+
+
+
+## 🧨 Error: `urls is not defined` in EJS
+
+### ❌ Problem:
+
+When rendering the EJS view, Node.js threw this error:
+```
+ReferenceError: urls is not defined
+    at home.ejs:10
+```
+
+### 📍 Cause:
+
+In EJS templates, variables like `urls` are only available if you **explicitly pass them** from the route using `res.render()`.
+
+If you write:
+```js
+res.render('home'); // ❌ No data passed
+```
+
+Then inside `home.ejs`, this will fail:
+```ejs
+<% urls.forEach(...) %> // ❌ "urls is not defined"
+```
+
+Because `urls` does not exist in the template's scope.
+
+---
+
+### ✅ Solution:
+
+Pass the variable to the EJS view like this:
+```js
+res.render('home', { urls: allUrls });
+```
+
+Now, inside your `home.ejs`, you can safely access `urls`:
+```ejs
+<% urls.forEach(url => { %>
+  <li><%= url.shortId %> - <%= url.redirectURL %> - <%= url.visitHistory.length %></li>
+<% }) %>
+```
+
+---
+
+### ✅ Correct Route Example:
+
+```js
+app.get("/test", async (req, res) => {
+  try {
+    const allUrls = await URL.find({});
+    res.render('home', { urls: allUrls }); // ✅ Pass data
+  } catch (err) {
+    console.error('Error fetching URLs:', err);
+    res.status(500).send("Internal Server Error");
+  }
+});
+```
+
+---
+
+### ✅ Correct `home.ejs` View:
+
+```ejs
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Page</title>
+</head>
+<body>
+  <h1>Welcome to Server</h1>
+  <ul>
+    <% urls.forEach(url => { %>
+      <li><%= url.shortId %> - <%= url.redirectURL %> - <%= url.visitHistory.length %></li>
+    <% }) %>
+  </ul>
+</body>
+</html>
+```
+
+---
+
+### 📌 Summary
+
+| Mistake                          | Fix                                     |
+|----------------------------------|------------------------------------------|
+| Not passing `urls` to view       | Use `res.render('home', { urls })`       |
+| Using `${}` instead of EJS tags  | Use `<%= %>` and `<% %>` in `.ejs` files |
+| Running `.ejs` file with `node`  | ❌ Invalid — only use Express to render   |

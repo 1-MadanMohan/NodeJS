@@ -1,0 +1,132 @@
+# ✅ Authentication Patterns: Stateless vs Stateful (in Code)
+
+---
+
+## 🔹 Stateless Authentication (e.g., JWT)
+
+- Server does **not store** any session data.
+- The client stores all info in the **JWT token**.
+- Server just verifies the token using a secret.
+- Commonly used in **REST APIs** and **mobile apps**.
+
+### 🔐 Login Route (Stateless)
+
+```js
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const app = express();
+app.use(express.json());
+
+const SECRET = 'your_jwt_secret';
+
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  
+  // Dummy user validation
+  if (email === 'user@example.com' && password === '123456') {
+    const token = jwt.sign({ email }, SECRET, { expiresIn: '1h' });
+    return res.json({ token });
+  }
+
+  res.status(401).json({ message: 'Invalid credentials' });
+});
+```
+
+### 🛡️ Protected Route (Stateless)
+
+```js
+const authMiddleware = (req, res, next) => {
+  const token = req.headers.authorization?.split(' ')[1]; // Bearer <token>
+
+  if (!token) return res.status(401).json({ message: 'Token missing' });
+
+  try {
+    const decoded = jwt.verify(token, SECRET);
+    req.user = decoded; // attach user info
+    next();
+  } catch (err) {
+    return res.status(403).json({ message: 'Invalid token' });
+  }
+};
+
+app.get('/protected', authMiddleware, (req, res) => {
+  res.send(`Welcome, ${req.user.email}`);
+});
+```
+
+---
+
+## 🔹 Stateful Authentication (e.g., Session + Cookie)
+
+- Server **stores session data** (in memory or Redis).
+- A **cookie** with session ID is sent to client.
+- On each request, server uses session ID to find session data.
+- Commonly used in **traditional web apps**.
+
+### 🔧 Setup Session Middleware
+
+```js
+const session = require('express-session');
+
+app.use(session({
+  secret: 'your_session_secret',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false } // true in production with HTTPS
+}));
+```
+
+### 🪪 Login Route (Stateful)
+
+```js
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+
+  // Dummy check
+  if (email === 'user@example.com' && password === '123456') {
+    req.session.user = { email }; // save in session
+    return res.send('Logged in with session');
+  }
+
+  res.status(401).send('Invalid credentials');
+});
+```
+
+### 🛡️ Protected Route (Stateful)
+
+```js
+const sessionAuth = (req, res, next) => {
+  if (req.session.user) {
+    next();
+  } else {
+    res.status(401).send('Not logged in');
+  }
+};
+
+app.get('/dashboard', sessionAuth, (req, res) => {
+  res.send(`Hello, ${req.session.user.email}`);
+});
+```
+
+---
+
+## 📊 Comparison Table
+
+| Feature                    | Stateless (JWT)             | Stateful (Session)           |
+|----------------------------|------------------------------|-------------------------------|
+| Server stores data?        | ❌ No                        | ✅ Yes (e.g., memory/Redis)   |
+| Scalability                | ✅ High                      | ❌ Needs centralized storage  |
+| Token/session revocation   | ❌ Hard (must expire)        | ✅ Easy (delete session)      |
+| Security risk              | Token theft (needs HTTPS)   | Session hijacking (cookie)   |
+| Ideal for                  | APIs, mobile apps            | Web apps (with cookies)       |
+| Logout                     | Remove token on client only | Destroy session on server     |
+
+---
+
+## 🔚 Summary
+
+- Use **JWT (stateless)** for distributed, scalable APIs and mobile apps.
+- Use **Session (stateful)** for simple web apps that rely on server memory.
+- JWT is faster and scalable but hard to revoke.
+- Sessions are easier to manage but need centralized store like Redis in scaling.
+
