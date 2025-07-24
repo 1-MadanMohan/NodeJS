@@ -1,0 +1,108 @@
+Great! Since your code now works in **Postman** but throws an error in the **browser**, let’s clarify what’s happening.
+
+---
+
+### ✅ What's likely happening:
+
+Your middleware expects a request header like:
+
+```http
+Authorization: Bearer <token>
+```
+
+But when you visit your API from the **browser address bar**, it **does not send that header**, which causes this error:
+
+```bash
+TypeError: Cannot read properties of undefined (reading 'split')
+```
+
+That’s because:
+
+```js
+const token = userUid.split("Bearer ")[1];
+```
+
+is trying to split `undefined`.
+
+---
+
+### ✅ Fix this with a safety check
+
+Update your middleware to **gracefully handle missing headers**:
+
+```js
+async function restrictToLoggedinUserOnly(req, res, next) {
+  const userUid = req.headers["authorization"];
+
+  if (!userUid || !userUid.startsWith("Bearer ")) {
+    return res.redirect("/login"); // or res.status(401).json({ message: "Unauthorized" });
+  }
+
+  const token = userUid.split("Bearer ")[1];
+  const user = getUser(token);
+
+  if (!user) return res.redirect("/login");
+
+  req.user = user;
+  next();
+}
+```
+
+And same with `checkAuth`:
+
+```js
+async function checkAuth(req, res, next) {
+  const userUid = req.headers["authorization"];
+
+  if (!userUid || !userUid.startsWith("Bearer ")) {
+    req.user = null;
+    return next(); // allow guest access
+  }
+
+  const token = userUid.split("Bearer ")[1];
+  const user = getUser(token);
+
+  req.user = user;
+  next();
+}
+```
+
+---
+
+### ✅ Want it to work in browser?
+
+If you want to **access protected pages in browser**, you have 2 options:
+
+#### 🔐 Option 1: Use **cookies** to store token (Recommended for browser)
+
+* When user logs in, send back the JWT in a **cookie**.
+* Then browser auto-sends the cookie on every request.
+
+#### ⚙️ Option 2: Use **fetch()** with Authorization header
+
+You can’t type the URL in the address bar. But you can call it with JavaScript:
+
+```js
+fetch("http://localhost:8001/protected", {
+  headers: {
+    Authorization: "Bearer YOUR_TOKEN_HERE"
+  }
+})
+  .then(res => res.json())
+  .then(console.log)
+```
+
+---
+
+### ✅ Summary
+
+| Situation           | Authorization Header Sent? | Result                        |
+| ------------------- | -------------------------- | ----------------------------- |
+| Postman             | ✅ Yes (you added it)       | ✅ Works fine                  |
+| Browser address bar | ❌ No                       | ❌ Crashes unless handled      |
+| Browser fetch()     | ✅ Yes (if manually added)  | ✅ Works                       |
+| Browser + cookie    | ✅ Yes (auto by browser)    | ✅ Works (if backend supports) |
+
+---
+
+Let me know if you want help adding **cookie-based JWT auth**, or want to build a **login form frontend** that sends tokens.
