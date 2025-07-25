@@ -9,7 +9,9 @@ const { connectToMongoDB } = require("./connect"); // 💾 Connects to our long-
 // 🛡️ Authentication Middlewares
 const {
   restrictToLoggedinUserOnly,   // 🔐 Protects certain routes
-  checkAuth                     // 🧐 Checks if user is logged in (used for UI personalization)
+  checkAuth,                     // 🧐 Checks if user is logged in (used for UI personalization)
+  checkForAuthentication,
+  restrictTo,
 } = require("./middlewares/auth");
 
 // 📦 Data Model – where URL mappings are stored
@@ -35,12 +37,13 @@ app.set("views", path.resolve("./views"));           // 🗂️ Locate the 'view
 // 🧰 5. Global Middlewares – Preparing the Server for Incoming Requests
 app.use(express.json());                             // 📥 Handles JSON data
 app.use(express.urlencoded({ extended: false }));    // 📄 Handles form submissions
-app.use(cookieParser());                             // 🍪 Parses cookies for auth/session
+app.use(cookieParser());    
+app.use(checkForAuthentication);                         // 🍪 Parses cookies for auth/session
 
 // 🛣️ 6. Route Mounting – Opening the Gates to Different Worlds
-app.use("/url", restrictToLoggedinUserOnly, urlRoute); // ✂️ Shorten URLs (Only for logged-in users)
+app.use("/url", restrictTo(["Normal"]), urlRoute); // ✂️ Shorten URLs (Only for logged-in users)
 app.use("/user", userRoute);                           // 👤 Auth routes (Login/Register)
-app.use("/", checkAuth, staticRoute);                  // 🏠 Home/dashboard (requires user check)
+app.use("/", staticRoute);                  // 🏠 Home/dashboard (requires user check)
 
 // 🌀 7. Dynamic Redirection Route – The Magic Portal
 app.get("/url/:shortId", async (req, res) => {

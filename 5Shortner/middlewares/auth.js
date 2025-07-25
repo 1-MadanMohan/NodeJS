@@ -1,33 +1,37 @@
 const { getUser } = require("../service/auth");
 
-async function restrictToLoggedinUserOnly(req, res, next) {
-  const userUid = req.headers["authorization"]
-// console.log(req.headers);
-  if (!userUid) return res.redirect("/login");
-  const token = userUid.split("Bearer ")[1];
-  const user = getUser(token);
+// Middleware to check and attach user to the request
+function checkForAuthentication(req, res, next) {
+  const authorizationHeader = req.headers["authorization"];
+  req.user = null;
 
+  if (!authorizationHeader || !authorizationHeader.startsWith("Bearer ")) {
+    return next(); // No token provided, move to next middleware
+  }
 
-  if (!user) return res.redirect("/login"); 
-
+  const token = authorizationHeader.split("Bearer ")[1];
+  const user = getUser(token); // Assuming getUser returns null if token invalid
   req.user = user;
+
   next();
 }
 
-async function checkAuth(req, res, next) {
+// Middleware factory: returns a middleware function that checks roles
+function restrictTo(roles = []) {
+  return function (req, res, next) {
+    if (!req.user) {
+      return res.redirect("/login"); // Use redirect, not 'direct'
+    }
 
-  const userUid = req.headers["authorization"]
-console.log(req.headers);
-  const token = userUid.split("Bearer ")[1];
+    if (!roles.includes(req.user.role)) {
+      return res.status(403).end("Unauthorized");
+    }
 
-
-  const user = getUser(token);
-
-  req.user = user;
-  next();
+    next(); // All good
+  };
 }
 
 module.exports = {
-  restrictToLoggedinUserOnly,
-  checkAuth,
+  checkForAuthentication,
+  restrictTo,
 };

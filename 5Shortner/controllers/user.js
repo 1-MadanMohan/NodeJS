@@ -26,8 +26,6 @@
 
     const token = setUser({ _id: user._id, email: user.email });
 
-
-
     return res.json({token});
   }
 
