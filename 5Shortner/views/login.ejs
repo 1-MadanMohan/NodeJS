@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <style>
@@ -21,5 +21,123 @@
 
       <button type="submit">Login</button>
     </form>
+  </body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f6f8;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .login-container {
+        background-color: #ffffff;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 24px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      label {
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        padding: 12px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        transition: border-color 0.3s ease;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+
+      button {
+        padding: 12px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .signup-btn {
+        margin-top: 10px;
+        background-color: #dc5eb2;
+      }
+
+      .signup-btn:hover {
+        background-color: #e0e7ed;
+      }
+
+      @media (max-width: 480px) {
+        .login-container {
+          padding: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Login</h1>
+      <form action="/user/login" method="post">
+        <label for="email">Email</label>
+        <input type="text" required name="email" id="email" placeholder="you@example.com" />
+
+        <label for="password">Password</label>
+        <input type="password" required name="password" id="password" placeholder="Enter your password" />
+
+        <button type="submit">Login</button>
+      </form>
+
+      <!-- Signup Button -->
+      <form action="/signup" method="get">
+        <button type="submit" class="signup-btn">Signup</button>
+      </form>
+    </div>
   </body>
 </html>

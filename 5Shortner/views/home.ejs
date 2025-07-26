@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <style>
@@ -47,4 +47,185 @@
       <% } %>
     </div>
   </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URL Shortener</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      padding: 40px 20px;
+      margin: 0;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 30px;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form label {
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 12px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .url-generated {
+      text-align: center;
+      margin: 25px 0;
+      padding: 12px;
+      font-weight: 600;
+      color: #155724;
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+      border-radius: 6px;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 40px;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f9fafb;
+      font-weight: 600;
+      color: #333;
+    }
+
+    td a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    td a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      form, table {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔗 URL Shortener</h1>
+
+<% if (locals.user && locals.user.role === "Admin") { %>
+  <div style="text-align: center; margin-bottom: 30px;">
+    <h2 style="color: #3c99d7;">👑 Welcome Boss!</h2>
+    <form action="/admin/urls" method="get" style="display: inline-block;">
+      <button 
+        type="submit" 
+        style="padding: 12px 24px; font-size: 16px; background-color: #a96184; color: white; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease;">
+        Your Door 🚪
+      </button>
+    </form>
+  </div>
+<% } %>
+
+
+
+
+
+  <% if (locals.id) { %>
+    <p class="url-generated">
+      ✅ URL Generated: 
+      <a href="http://localhost:8001/url/<%= id %>" target="_blank">
+        http://localhost:8001/url/<%= id %>
+      </a>
+    </p>
+  <% } %>
+
+  <form method="POST" action="/url">
+    <label for="url">Enter Your Original URL</label>
+    <input type="text" name="url" id="url" placeholder="https://example.com" required />
+    <button type="submit">Generate Short URL</button>
+  </form>
+
+  <% if (locals.urls && urls.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>S. No</th>
+          <th>Short ID</th>
+          <th>Original URL</th>
+          <th>Clicks</th>
+          <th>Uploaded By</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% urls.forEach((url, index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= url.shortId %></td>
+            <td><a href="<%= url.redirectURL %>" target="_blank"><%= url.redirectURL %></a></td>
+            <td><%= url.visitHistory.length %></td>
+            <td>
+              <%= url.createdBy?.email || "Unknown" %><br />
+              <small><%= url.createdBy?._id || "N/A" %></small>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+
+</body>
 </html>

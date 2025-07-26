@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <style>
@@ -23,5 +23,117 @@
 
       <button type="submit">Signup</button>
     </form>
+  </body>
+</html> -->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f6f8;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .signup-container {
+        background-color: #ffffff;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 420px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 24px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      label {
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="email"] {
+        padding: 12px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        transition: border-color 0.3s ease;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+
+      button {
+        padding: 12px;
+        font-size: 16px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #218838;
+      }
+
+      @media (max-width: 480px) {
+        .signup-container {
+          padding: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="signup-container">
+      <h1>Signup</h1>
+      <form action="/user" method="post">
+        <label for="name">Full Name</label>
+        <input type="text" required name="name" id="name" placeholder="John Doe" />
+
+        <label for="email">Email</label>
+        <input type="email" required name="email" id="email" placeholder="you@example.com" />
+
+        <label for="password">Password</label>
+        <input type="password" required name="password" id="password" placeholder="Create a password" />
+
+        <button type="submit">Signup</button>
+      </form>
+    </div>
   </body>
 </html>

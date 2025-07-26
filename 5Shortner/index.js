@@ -8,8 +8,6 @@ const { connectToMongoDB } = require("./connect"); // 💾 Connects to our long-
 
 // 🛡️ Authentication Middlewares
 const {
-  restrictToLoggedinUserOnly,   // 🔐 Protects certain routes
-  checkAuth,                     // 🧐 Checks if user is logged in (used for UI personalization)
   checkForAuthentication,
   restrictTo,
 } = require("./middlewares/auth");
@@ -41,9 +39,10 @@ app.use(cookieParser());
 app.use(checkForAuthentication);                         // 🍪 Parses cookies for auth/session
 
 // 🛣️ 6. Route Mounting – Opening the Gates to Different Worlds
-app.use("/url", restrictTo(["Normal"]), urlRoute); // ✂️ Shorten URLs (Only for logged-in users)
+app.use("/url", restrictTo(["Normal","Admin"]), urlRoute); // ✂️ Shorten URLs (Only for logged-in users)
 app.use("/user", userRoute);                           // 👤 Auth routes (Login/Register)
-app.use("/", staticRoute);                  // 🏠 Home/dashboard (requires user check)
+app.use("/",staticRoute);                  // 🏠 Home/dashboard (requires user check)
+
 
 // 🌀 7. Dynamic Redirection Route – The Magic Portal
 app.get("/url/:shortId", async (req, res) => {
