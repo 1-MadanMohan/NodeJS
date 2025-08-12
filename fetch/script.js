@@ -3,19 +3,25 @@
         const BASEURL = "https://dummyjson.com";
 
         // Event listener
-        button.addEventListener('click', handleClick);
+        window.addEventListener('DOMContentLoaded', handleClick);
 
         function handleClick() {
-            getData(BASEURL).then(data => {
+            getData(BASEURL)
+            .then(data => {
                 render(listContainer, data.products);
+            })
+            .catch(error => {
+                console.error("Error during fetching or rendering:", error);
             });
+
         }
 
         // API function
         async function getData(url) {
             try {
                 const response = await fetch(`${url}/products`);
-                return  response.json();
+                  
+                return  await response.json();
             } catch (e) {
                 console.error("Error occurred:", e);
             } finally {
