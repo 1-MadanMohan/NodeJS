@@ -1,0 +1,16 @@
+-->Handling errors while making API calls
+-->Retries on API calls
+-->Caching Strategies
+-->Progressive Enhancements
+-->Fallback UI
+
+
+no fault(1): req✅res✅
+errors(2): req fail to reach server, responnse with error by server
+network error
+server based error
+
+
+Retry logic is primarily used to overcome transient network
+ errors—such as timeouts, dropped connections, or temporary
+  server unavailability—by automatically attempting the request again.
